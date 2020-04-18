@@ -1,9 +1,27 @@
 import React from 'react';
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 
 class App extends React.Component{
+  state={
+    count: 0
+  };
+
+
+  add = () => {
+    this.setState(current=> ({count: current.count + 1}));
+
+  }
+  minus = () => {
+    this.setState({count: this.state.count - 1});
+  }
+
+
   render(){
-    return <h1>im a classaa Component</h1>;
+    return <div>
+        <h1>the number is: {this.state.count}</h1>
+        <button onClick={this.add}>Add</button>
+        <button onClick={this.minus}>Minus</button>
+      </div>;
   }
 }
 
